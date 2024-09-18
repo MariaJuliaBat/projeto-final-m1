@@ -12,7 +12,7 @@ let questions = [
     },
     {
         numb: 2,
-        question: "What does CSS stand for",
+        question: "What does CSS stand for?",
         answer: "A. Cascading Style Sheet",
         options: [
             "A. Cascading Style Sheet",
