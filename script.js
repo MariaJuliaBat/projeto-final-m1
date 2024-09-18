@@ -5,6 +5,7 @@ const main = document.querySelector('.main');
 const continueBtn = document.querySelector('.continue-btn');
 const quizSection = document.querySelector('.quiz-section');
 const quizBox = document.querySelector('.quiz-box');
+const resultBox = document.querySelector('.result-box');
 
 
 startBtn.onclick = () => {
@@ -25,10 +26,12 @@ continueBtn.onclick = () => {
 
     showQuestions(0);
     questionCounter(1);
+    headerScore();
 }
 
 let questionCount = 0;
 let questionNumb = 1;
+let userScore =0;
 
 const nextBtn = document.querySelector('.next-btn');
 
@@ -39,9 +42,11 @@ nextBtn.onclick = () => {
 
         questionNumb++;
         questionCounter(questionNumb);
+
+        nextBtn.classList.remove('active');
     }
     else {
-        console.log('Question Completed');
+        showResultBox();
     }
 }
 
@@ -50,7 +55,7 @@ const optionList = document.querySelector('.option-list');
 // getting questions and options from array
 function showQuestions(index){
     const questionText = document.querySelector('.question-text');
-    questionText.textContent = `${questions[index].numb} .${questions[index].question}`
+    questionText.textContent = `${questions[index].numb} .${questions[index].question}`;
 
     let optionTag = `<div class="option"><span>${questions[index].options[0]}</span></div>
     <div class="option"><span>${questions[index].options[1]}</span></div>
@@ -65,19 +70,47 @@ function showQuestions(index){
     }
 }
 
-function optionSelected(answer){
+function optionSelected(answer) {
     let userAnswer = answer.textContent;
     let correctAnswer = questions[questionCount].answer;
+    let allOptions = optionList.children.length;
 
     if(userAnswer == correctAnswer){
         answer.classList.add('correct');
+        userScore += 1;
+        headerScore();
     }
-    else{
+    else {
         answer.classList.add('incorrect');
+
+        //if answer incorrect ,auto selected correct answer
+        for  (let i = 0; i < allOptions; i++) {
+           if (optionList.children[i].textContent == correctAnswer) {
+               optionList.children[i].setAttribute('class','option correct');
+           }
+        }
     }
+
+
+// if user has selected, disabled all options
+for  (let i = 0; i < allOptions; i++)  {
+      optionList.children[i].classList.add('disabled');
 }
 
-function questionCounter(index){
+nextBtn.classList.add('active');
+
+}
+
+function questionCounter(index) {
     const questionTotal = document.querySelector('.question-total');
     questionTotal.textContent = `${index} of ${questions.length} Questions`
+}
+
+function headerScore(){
+     const headerScoreText = document.querySelector('.header-score');
+     headerScoreText.textContent = `Score: ${userScore} / ${questions.length}`;
+}
+
+function showResultBox(){
+    quizBox.classList.remove('active');
 }
