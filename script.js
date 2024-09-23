@@ -6,6 +6,8 @@ const continueBtn = document.querySelector('.continue-btn');
 const quizSection = document.querySelector('.quiz-section');
 const quizBox = document.querySelector('.quiz-box');
 const resultBox = document.querySelector('.result-box');
+const tryAgainBtn = document.querySelector('.tryAgain-btn');
+const goHomeBtn = document.querySelector('.goHome-btn');
 
 
 startBtn.onclick = () => {
@@ -28,6 +30,32 @@ continueBtn.onclick = () => {
     questionCounter(1);
     headerScore();
 }
+
+tryAgainBtn.onclick = () => {
+   quizBox.classList.add('active');
+  nextBtn.classList.remove('active');
+  resultBox.classList.remove('active');
+
+   questionCount = 0;
+   questionNumb = 1;
+   userScore =0;
+   showQuestions(questionCount);
+   questionCounter(questionNumb);
+
+   headerScore();
+}
+
+goHomeBtn.onclick = () => {
+    quizSection.classList.remove('active');
+   nextBtn.classList.remove('active');
+   resultBox.classList.remove('active');
+ 
+    questionCount = 0;
+    questionNumb = 1;
+    userScore =0;
+    showQuestions(questionCount);
+    questionCounter(questionNumb);
+ }
 
 let questionCount = 0;
 let questionNumb = 1;
@@ -113,4 +141,25 @@ function headerScore(){
 
 function showResultBox(){
     quizBox.classList.remove('active');
+    resultBox.classList.add('active');
+
+    const scoreText = document.querySelector('.score-text');
+    scoreText.textContent = `Your Score ${userScore} out of ${questions.lenght}`;
+
+    const circularProgress = document.querySelector('.circular-progress');
+    const progressValue = document.querySelector('.progress-value');
+    let progressStartValue = -1;
+    let progressEndValue = (userScore / questions.lenght) * 100;
+    let speed = 20;
+
+    let progress = setInterval(() =>{
+        progressStartValue++;
+
+      progressValue.textContent = `${progressStarValue}%`;
+      circularProgress.style.background = `conic-gradient(#c40094 ${progressStartValue * 3.6}deg, rgba(255,  255,  255, .1) 0deg);`;
+
+        if (progressStartValue == progressEndValue) {
+            clearInterval(progress);
+        }
+    }, speed);
 }
