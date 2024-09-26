@@ -351,8 +351,9 @@ body {
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-50%, -50%) scale(.9);
-    width:500px;
+    transform:translate(-50%, -50%) scale(0.9);
+    width:80%; /* Ajuste para responsividade */
+    max-width: 500px; /* Limite de largura */
     background:transparent;
     border:2px solid #c40094;
     border-radius:6px;
@@ -366,28 +367,28 @@ body {
 }
 
 .quiz-section .result-box.active {
-    opacity:1;
+    opacity: 1;
     pointer-events: auto;
-    transform:translate(-50%, -50%) scale(.1);
+    transform:translate(-50%, -50%) scale(1); /* Corrigido para escalar corretamente */
 }
 
-.result-box h2{
-    font-size: 52px;
-
+.result-box h2 {
+    font-size: 52px; /* Dimensão mais equilibrada */
 }
 
-.result-box  .percentage-container{
-    width: 300px;
+.percentage-container {
+    width: 100%;
+    max-width: 400px; /* Responsivo */
     display: flex;
     flex-direction: column;
     align-items: center;
     margin:20px 0 40px;
 }
 
-.percentage-container .circular-progress{
+.percentage-container .circular-progress {
     position:relative;
-    width:250px;
-    height: 250px;
+    width:200px; /* Ajuste para telas menores */
+    height: 200px;
     background:conic-gradient(#c40094 3.6deg, rgba(255,  255,  255,.1) 0deg);
     border-radius: 50%;
     display:flex;
@@ -395,30 +396,22 @@ body {
     align-items: center;
 }
 
-.percentage-container .circular-progress::before {
-    content:'';
-    position: absolute;
-    width: 210px;
-    height:210px;
-    background:#09001d;
-    border-radius:50%;
+.circular-progress .progress-value {
+    position: relative;
+    font-size: 30px; /* Tamanho mais ajustado */
+    font-weight: 600;
 }
 
-.circular-progress  .progress-value{
-position: relative;
-font-size: 45px;
-font-weight:600;
-}
-
-.percentage-container .score-text{
-    font-size:26px;
+.percentage-container .score-text {
+    font-size:20px; /* Fonte um pouco menor */
     font-weight: 600;
     margin-top: 20px;
 }
 
-.result-box .buttons{
+.result-box .buttons {
     display: flex;
 }
+
 
 
 .buttons button{
