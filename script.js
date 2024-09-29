@@ -151,3 +151,16 @@ function restartQuiz() {
     questionCounter(questionNumb);
     headerScore();
 }
+   
+    alert("Insira seu nome , por favor!")
+
+
+   let nomedoUsuario =prompt("Qual é o seu nome?");
+    
+   if(nomedoUsuario) {
+        alert("Olá  , "  + nomedoUsuario + "!");
+    }
+    else{
+        alert("Você não inseriu um nome.");
+    }
+     
