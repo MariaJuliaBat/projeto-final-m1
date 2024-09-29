@@ -41,6 +41,7 @@ body {
 
 .navbar a {
     font-size: 18px;
+    font-family:cursive;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
@@ -52,8 +53,13 @@ body {
     color: #23a096;
 }
 .navbar a.active {
-    color: #23a096;
+    color:#fff;
 }
+
+.navbar a:hover{
+    color: #00FFFF;
+}
+
 
 .main {
     min-height: 100vh;
@@ -222,7 +228,7 @@ body {
     position: relative;
     width: 500px;
     background: transparent;
-    border: 2px solid #c40094;
+    border: 2px solid #23a096;
     border-radius: 6px;
     display: flex;
     flex-direction: column;
@@ -245,7 +251,7 @@ body {
 .quiz-box h1{
     font-size: 32px;
     text-align: center;
-    background: linear-gradient(45deg, transparent, #c40094, transparent);
+    background: linear-gradient(45deg, transparent, #187574, transparent);
     border-radius: 6px;
 }
 
@@ -254,7 +260,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
-    border-bottom: 2px solid #c40094;
+    border-bottom: 2px solid #23a096;
     margin-bottom: 30px;
 }
 
@@ -264,7 +270,8 @@ body {
 }
 
 .quiz-header .header-score{
-    background: #c40094;
+    font-family: cursive;
+    background: #23a096;
     border-radius: 3px;
     padding: 7px;
 }
@@ -278,7 +285,7 @@ body {
     width: 100%;
     padding: 12px;
     background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
+    border: 2px solid #23a096;
     border-radius: 4px;
     font-size: 17px;
     margin: 15px 0;
@@ -287,8 +294,8 @@ body {
 }
 
 .option-list .option:hover{
-    background: rgba(255, 255, 255, .1);
-    border-color: rgba(255, 255, 255, .1);
+    background: #187574;
+    border-color: #fff;
 }
 
 .option-list .option.correct {
@@ -309,7 +316,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 2px solid #c40094;
+    border-top: 2px solid #23a096;
     padding-top: 20px;
     margin-top: 25px;
 }
@@ -319,33 +326,36 @@ body {
     font-weight: 600;
 }
 
-.quiz-footer .next-btn{
+.quiz-footer .next-btn { /* Esse botão não está funcionando*/
     width: 100px;
     height: 45px;
-    background: rgba(255, 255, 255, .1);
-    border: 2px solid rgba(255, 255, 255, .1);
+    background:#0c3a43;
+    border: 2px solid #0c3a43;
     outline: none;
     border-radius: 6px;
     font-size: 16px;
-    color: rgba(255, 255, 255, .3);
+    color:#fff;
     font-weight: 600;
     cursor: pointer;
     /* pointer-events: none; */
     transition: .5s;
 }
 
-.quiz-footer .next-btn.active{
+
+.quiz-footer .next-btn.active:hover {
+    background: #23a096;
+    border-color:#187574;
+}
+
+
+.quiz-footer .next-btn.active {
     pointer-events: auto;
-    background-color: #c40094;
-    border-color:#c40094;
+    background: #23a096;
+    border-color:#187574;
     color:#fff;
 }
 
 
-.quiz-footer .next-btn.active:hover{
-    background: #950170;
-    border-color: #950170;
-}
 
 .quiz-section .result-box {
     position:absolute;
@@ -355,7 +365,7 @@ body {
     width:80%; /* Ajuste para responsividade */
     max-width: 500px; /* Limite de largura */
     background:transparent;
-    border:2px solid #c40094;
+    border:2px solid #23a096;
     border-radius:6px;
     padding:20px;
     display:flex;
@@ -365,6 +375,8 @@ body {
     pointer-events: none;
     transition: .3s ease;
 }
+
+
 
 .quiz-section .result-box.active {
     opacity: 1;
@@ -376,6 +388,7 @@ body {
     font-size: 52px; /* Dimensão mais equilibrada */
 }
 
+
 .percentage-container {
     width: 100%;
     max-width: 400px; /* Responsivo */
@@ -385,11 +398,13 @@ body {
     margin:20px 0 40px;
 }
 
+
+
 .percentage-container .circular-progress {
     position:relative;
     width:200px; /* Ajuste para telas menores */
     height: 200px;
-    background:conic-gradient(#c40094 3.6deg, rgba(255,  255,  255,.1) 0deg);
+    background:conic-gradient(#23a096 3.6deg, #23a096 0deg); /* Verifiquem se a cor realmente foi mudada no círculo da porcentagem*/
     border-radius: 50%;
     display:flex;
     justify-content: center;
@@ -402,8 +417,11 @@ body {
     font-weight: 600;
 }
 
+
+
 .percentage-container .score-text {
     font-size:20px; /* Fonte um pouco menor */
+    font-family: cursive;
     font-weight: 600;
     margin-top: 20px;
 }
@@ -413,12 +431,11 @@ body {
 }
 
 
-
 .buttons button{
     width : 130px;
     height:47px;
-    background: #c40094;
-    border:2px solid #c40094;
+    background: #0c3a43;
+    border:2px solid #23a096;
     border-radius:6px;
     font-size: 16px;
     color:#fff;
@@ -428,21 +445,27 @@ body {
     transition: .5s;
 }
 
+
 .buttons button:nth-child(1):hover {
-    background: #950170;
-    border-color: #950170;
+    background: #0c3a43;
+    border-color: #092934;
 }
 
 
 .buttons button:nth-child(2) {
-    background:transparent;
-    color:#c40094;
+    background: #fff;
+    color:#0c3a43;
 }
 
 
 .buttons button:nth-child(2):hover{
-    background: #c40094;
+    background: #0c3a43;
     color:#fff;
 }
 
+#Mensagem{
+    background: #00FFFF;
+    color: #00a63d;
+
+}
 
