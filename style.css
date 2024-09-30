@@ -47,6 +47,7 @@ body {
     font-weight: 500;
     margin-left: 35px;
     transition: .3s;
+    position: relative;
 }
 
 .navbar a:hover{
@@ -58,6 +59,21 @@ body {
 
 .navbar a:hover{
     color: #00FFFF;
+}
+/*animation navbar */
+.navbar a::after{
+    content: " ";
+    width: 0%;
+    height: 4px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s ease-in-out;
+}
+.navbar a:hover::after{
+    width: 100%;
+
 }
 
 
@@ -101,6 +117,23 @@ body {
     font-size: 78px;
     font-weight: 700;
     text-shadow: 0 0 10px rgba(0, 0, 0, .3);
+     /*animação*/
+     border-right: 5px solid;
+     width: 89%;
+     white-space: nowrap;
+     overflow: hidden;
+     animation: 
+         typing 2s steps(18),
+         cursor .4s step-end infinite alternate
+     ;
+}
+/*curso blink*/
+@keyframes cursor {
+    50% { border-color: transparent;}
+}
+/*typing efect*/
+@keyframes typing {
+    from { width: 0;}
 }
 
 .home-content p {
@@ -327,6 +360,7 @@ body {
 }
 
 .quiz-footer .next-btn { /* Esse botão não está funcionando*/
+                        /*G - Tentei concerta porem estava dando erro en outras funcionalidades*/
     width: 100px;
     height: 45px;
     background:#0c3a43;
