@@ -1,57 +1,57 @@
 let questions = [
     {
         numb: 1,
-        question: "What does HTML stand for?",
-        answer: "C. Hyper Text Markup Language",
+        question: "Quantas vezes você pode subtrair 5 de 25?",
+        answer: "C. 1",
         options: [
-            "A. Hyper Type Multi Language",
-            "B. Hyper Text Multiple Language",
-            "C. Hyper Text Markup Language",
-            "D. Home Text Multi Language"
+            "A. 4",
+            "B. 5",
+            "C. 1",
+            "D. 0"
         ]
     },
     {
         numb: 2,
-        question: "What does CSS stand for?",
-        answer: "A. Cascading Style Sheet",
+        question: "Você entra em uma sala escura e tem um fósforo no bolso. Há uma lareira e uma vela, o que você acende primeiro?",
+        answer: "A. A luz",
         options: [
-            "A. Cascading Style Sheet",
-            "B. Cute Style Sheet",
-            "C. Computer Style Sheet",
-            "D. Codehal Style Sheet"
+            "A. A luz",
+            "B. A lareira",
+            "C. A vela",
+            "D. O fósforo"
         ]
     },
     {
         numb: 3,
-        question: "What does PHP stand for?",
-        answer: "A. Hypertext Preprocessor",
+        question: "Qual as cores da bandeira de Bangladesh?",
+        answer: "A. Verde e vermelho",
         options: [
-            "A. Hypertext Preprocessor",
-            "B. Hometext Programming",
-            "C. Hypertext Preprogramming",
-            "D. Programing Hypertext Preprocessor"
+            "A. Verde e vermelho",
+            "B. Amarelo, verde e vermelho",
+            "C. Azul e vermelho",
+            "D. Branco e azul"
         ]
     },
     {
         numb: 4,
-        question: "What does SQL stand for?",
-        answer: "D. Structured Query Language",
+        question: "Descubra a lógica e complete o próximo elemento: 1, 3, 5, 7, _?",
+        answer: "D. 9",
         options: [
-            "A. Strength Query Language",
-            "B. Stylesheet Query Language",
-            "C. Science Question Language",
-            "D. Structured Query Language"
+            "A. 1",
+            "B. 10",
+            "C. 6",
+            "D. 9"
         ]
     },
     {
         numb: 5,
-        question: "What does XML stand for?",
-        answer: "D. Extensible Markup Language",
+        question: "C od sioped artel an euqilC",
+        answer: "D. P",
         options: [
-            "A. Excellent Multiple Language",
-            "B. Explore Multiple Language",
-            "C. Extra Markup Language",
-            "D. Extensible Markup Language"
+            "A. I",
+            "B. C",
+            "C. D",
+            "D. P"
         ]
     }
 ];

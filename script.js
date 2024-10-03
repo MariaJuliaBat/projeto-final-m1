@@ -31,7 +31,7 @@ continueBtn.onclick = () => {
 }
 
 tryAgainBtn.onclick = () => {
-   restartQuiz(); // Função para reiniciar o quiz
+   restartQuiz(); 
 }
 
 goHomeBtn.onclick = () => {
@@ -39,7 +39,7 @@ goHomeBtn.onclick = () => {
    nextBtn.classList.remove('active');
    resultBox.classList.remove('active');
  
-    restartQuiz(); // Reinicia o quiz ao voltar para o início
+    restartQuiz(); 
 }
 
 let questionCount = 0;
@@ -50,7 +50,7 @@ const nextBtn = document.querySelector('.next-btn');
 
 const optionList = document.querySelector('.option-list');
 
-// getting questions and options from array
+
 function showQuestions(index){
     const questionText = document.querySelector('.question-text');
     questionText.textContent = `${questions[index].numb} .${questions[index].question}`;
@@ -78,7 +78,7 @@ function optionSelected(answer) {
         userScore += 1;
         headerScore();
 
-        // Avançar automaticamente para a próxima pergunta
+       
         setTimeout(() => {
             if (questionCount < questions.length - 1) {
                 questionCount++;
@@ -86,19 +86,19 @@ function optionSelected(answer) {
                 showQuestions(questionCount);
                 questionCounter(questionNumb);
             } else {
-                showResultBox(); // Se for a última pergunta, mostrar o resultado
+                showResultBox(); 
             }
-        }, 1000); // Pequeno atraso para mostrar o feedback visual
+        }, 1000); 
     }
     else {
         answer.classList.add('incorrect');
-        // Reiniciar o quiz após uma resposta incorreta
+
         setTimeout(() => {
             restartQuiz();
-        }, 1000); // Pequeno atraso para mostrar o feedback visual
+        }, 1000); 
     }
 
-    // Desativar todas as opções após seleção
+
     for  (let i = 0; i < allOptions; i++)  {
         optionList.children[i].classList.add('disabled');
     }
@@ -106,7 +106,7 @@ function optionSelected(answer) {
 
 function questionCounter(index) {
     const questionTotal = document.querySelector('.question-total');
-    questionTotal.textContent = `${index} of ${questions.length} Questions`;
+    questionTotal.textContent = `${index} de ${questions.length} Questões`;
 }
 
 function headerScore(){
@@ -118,20 +118,17 @@ function showResultBox(){
     quizBox.classList.remove('active');
     resultBox.classList.add('active');
 
-    const scoreText = document.querySelector('.score-text');
-    scoreText.textContent = `Your Score ${userScore} out of ${questions.length}`;
-
     const circularProgress = document.querySelector('.circular-progress');
     const progressValue = document.querySelector('.progress-value');
     let progressStartValue = 0;
-    let progressEndValue = Math.round((userScore / questions.length) * 100); // Calcular corretamente a porcentagem de acertos
+    let progressEndValue = Math.round((userScore / questions.length) * 100);
     let speed = 20;
 
     let progress = setInterval(() =>{
         progressStartValue++;
 
         progressValue.textContent = `${progressStartValue}%`;
-        circularProgress.style.background = `conic-gradient(#c40094 ${progressStartValue * 3.6}deg, rgba(255, 255, 255, .1) 0deg)`;
+        circularProgress.style.background = `conic-gradient(#21aca0 ${progressStartValue * 3.6}deg, #404d4b 0deg)` ;
 
         if (progressStartValue == progressEndValue) {
             clearInterval(progress);
@@ -152,15 +149,10 @@ function restartQuiz() {
     headerScore();
 }
    
-    alert("Insira seu nome , por favor!")
+    alert("Para jogar, insira seu nome! :)")
 
-
-   let nomedoUsuario =prompt("Qual é o seu nome?");
-    
-   if(nomedoUsuario) {
-        alert("Olá  , "  + nomedoUsuario + "!");
+    let nomeUser = prompt("Digite seu nome:");
+    while (nomeUser.length < 3) {
+        nomeUser = prompt("Erro. Insira seu nome:");
     }
-    else{
-        alert("Você não inseriu um nome.");
-    }
-     
+    alert("Boas vindas " + nomeUser + " :)");
